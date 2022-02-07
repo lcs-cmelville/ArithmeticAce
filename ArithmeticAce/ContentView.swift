@@ -15,6 +15,9 @@ struct ContentView: View {
     @State var inputGiven = ""
     
     //MARK: Computed properties
+    var correctProduct: Int {
+        return multiplicand * mutltiplier
+    }
     
     var body: some View {
         
@@ -45,6 +48,28 @@ struct ContentView: View {
                     .multilineTextAlignment(.trailing)
                 
             }
+            
+            Button(action: {
+                // Convert the unput given to an integerm if possible
+                guard let productGiven = Int(inputGiven) else {
+                    // Not a number
+                    return
+                }
+                
+                // Check the answer
+                // if the inputed answer equals the multiplicand x the multiplier than it's correct, if not it's incorrect
+                if productGiven == correctProduct {
+                    // Celebrate
+                } else {
+                    // Not the correct number
+                    
+                }
+            }, label: {
+                Text("Check Answer")
+                    .font(.largeTitle)
+            })
+                .padding()
+                .buttonStyle(.bordered)
             
             Spacer()
         }
