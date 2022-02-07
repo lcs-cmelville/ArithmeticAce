@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        VStack{
+        VStack(spacing: 0) {
+            
             HStack{
                 
                 Text("✕")
@@ -25,11 +26,22 @@ struct ContentView: View {
                     Text("6")
                 }
             }
-            .padding()
-            .font(.system(size: 72))
-        
             Divider()
+            
+            HStack {
+                Image(systemName: "checkmark.circle")
+                    .foregroundColor(.green)
+                
+                Spacer()
+                
+                Text("30")
+            }
+            
+            Spacer()
         }
+        .padding(.horizontal)
+        .font(.system(size: 72))
+
     }
 }
 
