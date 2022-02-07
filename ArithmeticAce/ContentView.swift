@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //MARK: Stored properties
+    let multiplicand = Int.random(in: 1...12)
+    let mutltiplier = Int.random(in: 1...12)
+    @State var inputGiven = ""
+    
+    //MARK: Computed properties
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -17,13 +25,11 @@ struct ContentView: View {
                 Text("✕")
                 
                 Spacer()
-                    
-                
 
-                VStack{
-                    Text("5")
+                VStack(alignment: .trailing) {
+                    Text("\(multiplicand)")
                     
-                    Text("6")
+                    Text("\(mutltiplier)")
                 }
             }
             Divider()
@@ -34,7 +40,10 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Text("30")
+                TextField("",
+                          text: $inputGiven)
+                    .multilineTextAlignment(.trailing)
+                
             }
             
             Spacer()
