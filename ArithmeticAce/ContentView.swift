@@ -14,6 +14,12 @@ struct ContentView: View {
     let mutltiplier = Int.random(in: 1...12)
     @State var inputGiven = ""
     
+    // Has an answer been checked?
+    @State var answerChecked = false
+    
+    // Was the answer given correct?
+    @State var answerCorrect = false
+    
     //MARK: Computed properties
     var correctProduct: Int {
         return multiplicand * mutltiplier
@@ -40,6 +46,8 @@ struct ContentView: View {
             HStack {
                 Image(systemName: "checkmark.circle")
                     .foregroundColor(.green)
+                //            CONDITION     true  false
+                    .opacity(answerCorrect ? 1.0 : 0.0)
                 
                 Spacer()
                 
@@ -50,9 +58,14 @@ struct ContentView: View {
             }
             
             Button(action: {
+                
+                // Answer has been checked
+                answerChecked = true
+                
                 // Convert the unput given to an integerm if possible
                 guard let productGiven = Int(inputGiven) else {
                     // Not a number
+                    answerCorrect = false
                     return
                 }
                 
@@ -60,9 +73,10 @@ struct ContentView: View {
                 // if the inputed answer equals the multiplicand x the multiplier than it's correct, if not it's incorrect
                 if productGiven == correctProduct {
                     // Celebrate
+                    answerCorrect = true
                 } else {
                     // Not the correct number
-                    
+                    answerCorrect = false
                 }
             }, label: {
                 Text("Check Answer")
