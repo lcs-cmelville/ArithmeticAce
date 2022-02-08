@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     //MARK: Stored properties
-    let multiplicand = Int.random(in: 1...12)
-    let mutltiplier = Int.random(in: 1...12)
+    @State var multiplicand = Int.random(in: 1...12)
+    @State var mutltiplier = Int.random(in: 1...12)
     @State var inputGiven = ""
     
     // Has an answer been checked?
@@ -44,17 +44,25 @@ struct ContentView: View {
             Divider()
             
             HStack {
+                
+                ZStack{
                 Image(systemName: "checkmark.circle")
                     .foregroundColor(.green)
                 //            CONDITION     true  false
                     .opacity(answerCorrect ? 1.0 : 0.0)
+                
+                Image(systemName: "x.circle")
+                    .foregroundColor(.red)
+                //            CONDITION                     true  false
+                    .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
+
+                }
                 
                 Spacer()
                 
                 TextField("",
                           text: $inputGiven)
                     .multilineTextAlignment(.trailing)
-                
             }
             
             Button(action: {
@@ -84,8 +92,33 @@ struct ContentView: View {
             })
                 .padding()
                 .buttonStyle(.bordered)
+                .opacity(answerChecked ? 0.0 : 1.0)
+               
+            
+            
+            Button(action: {
+                // Generate new question
+                multiplicand = Int.random(in: 1...12)
+                mutltiplier = Int.random(in: 1...12)
+
+                
+                // Reset properties that track what's happening with the current question
+                answerChecked = false
+                answerCorrect = false
+                
+                // Reset the input field
+                inputGiven = ""
+            }, label: {
+                Text("New Question")
+                    .font(.largeTitle)
+            })
+                .padding()
+                .buttonStyle(.bordered)
+
+            
             
             Spacer()
+            
         }
         .padding(.horizontal)
         .font(.system(size: 72))
