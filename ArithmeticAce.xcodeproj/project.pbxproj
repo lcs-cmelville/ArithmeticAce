@@ -11,6 +11,8 @@
 		B6B5D4D627B15E8B002691AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5D4D527B15E8B002691AF /* ContentView.swift */; };
 		B6B5D4D827B15E91002691AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B5D4D727B15E91002691AF /* Assets.xcassets */; };
 		B6B5D4DB27B15E91002691AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B5D4DA27B15E91002691AF /* Preview Assets.xcassets */; };
+		B6E7E60827B33D9F00F2AF80 /* SubtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7E60727B33D9F00F2AF80 /* SubtractionView.swift */; };
+		B6FA6F0627B2DAEB000525B7 /* AdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA6F0527B2DAEA000525B7 /* AdditionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B6B5D4D527B15E8B002691AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6B5D4D727B15E91002691AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6B5D4DA27B15E91002691AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B6E7E60727B33D9F00F2AF80 /* SubtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtractionView.swift; sourceTree = "<group>"; };
+		B6FA6F0527B2DAEA000525B7 /* AdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				B6B5D4D327B15E8B002691AF /* ArithmeticAceApp.swift */,
 				B6B5D4D527B15E8B002691AF /* ContentView.swift */,
+				B6FA6F0527B2DAEA000525B7 /* AdditionView.swift */,
+				B6E7E60727B33D9F00F2AF80 /* SubtractionView.swift */,
 				B6B5D4D727B15E91002691AF /* Assets.xcassets */,
 				B6B5D4D927B15E91002691AF /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B5D4D627B15E8B002691AF /* ContentView.swift in Sources */,
+				B6E7E60827B33D9F00F2AF80 /* SubtractionView.swift in Sources */,
 				B6B5D4D427B15E8B002691AF /* ArithmeticAceApp.swift in Sources */,
+				B6FA6F0627B2DAEB000525B7 /* AdditionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
